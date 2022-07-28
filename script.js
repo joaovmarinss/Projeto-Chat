@@ -20,6 +20,7 @@ function creatingbox(){
     ncontmen.appendChild(nbottons)
     mensagensbox.appendChild(ncontmen)
 }
+
 var mensagensbox = document.querySelector("#mensagens")
 var butsend = document.querySelector("#send")
 var text = document.querySelector("#textarea")
