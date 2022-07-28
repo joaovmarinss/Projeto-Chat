@@ -14,14 +14,14 @@ butsend.addEventListener("click",() =>{
         mensagensbox.appendChild(ncontmen)
         text.value = ""
     }else{
-        alert("Digite um texto")
+        alert("Digite um texto!!!!!")
     }   
 })
 function edit(check){
     if(!(text.value == "")) {
        check.parentNode.parentNode.firstChild.innerHTML = text.value
     }else{
-        alert("Digite um texto")
+        alert("Digite um texto!!!!!")
     }
 }   
 function exit(check){
