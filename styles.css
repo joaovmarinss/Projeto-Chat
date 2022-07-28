@@ -42,13 +42,15 @@ main{
     padding: 6px;
     border: none;
 }
-
+#text{
+    width: 80%;
+}
 #text textarea{
     margin-top: 0.5rem ;
     margin-bottom :0.5rem; ;
-    width: 25rem;
+    width: 100%;
     justify-content: center;
-    height: 6rem;
+    height: 85%;
     border: #000 1px solid;
 }
 #mensagens{
@@ -57,6 +59,7 @@ main{
     overflow: auto;
 }
 .textmen{
+    word-wrap: break-word;
     margin-top: 10px;
     border: #000 solid 1px;
     background-color: #FAFAFA;

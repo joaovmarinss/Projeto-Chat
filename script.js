@@ -1,31 +1,22 @@
-function creatingbox(){
-    const ncontmen = document.createElement("div")
-    ncontmen.setAttribute("class","contmen")
-    const ntextmen = document.createElement("div")
-    ntextmen.setAttribute("class","textmen")
-    const np = document.createElement("p")
-    np.innerHTML = text.value
-    const nbottons = document.createElement("div")
-    nbottons.setAttribute("class","bottons")
-    const nbtedit = document.createElement("button")
-    nbtedit.setAttribute("class","btedit")
-    nbtedit.innerHTML = "Editar"
-    const nbtexit = document.createElement("button")
-    nbtexit.setAttribute("class","btexit")
-    nbtexit.innerHTML = "Excluir" 
-    ntextmen.appendChild(np)
-    nbottons.appendChild(nbtedit)
-    nbottons.appendChild(nbtexit)
-    ncontmen.appendChild(ntextmen)
-    ncontmen.appendChild(nbottons)
-    mensagensbox.appendChild(ncontmen)
-}
-
-var mensagensbox = document.querySelector("#mensagens")
-var butsend = document.querySelector("#send")
-var text = document.querySelector("#textarea")
-
+const butsend = document.querySelector("#send")
 butsend.addEventListener("click",() =>{
-    creatingbox()
+    const mensagensbox = document.querySelector("#mensagens")
+    const text = document.querySelector("#textarea")
+    const ncontmen = document.createElement("div")
+    ncontmen.classList.add("contmen")
+    ncontmen.innerHTML = `<div class="textmen"><p>${text.value}<\p>
+        </div>
+        <div class="bottons">
+        <button class="btedit" onclick="edit(this)">Editar</button>
+        <button class="btexit" onclick="exit(this)">Excluir</button>
+    </div>`
+    mensagensbox.appendChild(ncontmen)
     text.value = ""
 })
+function edit(check){
+    const text = document.querySelector("#textarea")
+    check.parentNode.parentNode.firstChild.innerHTML = text.value
+}   
+function exit(check){
+    check.parentNode.parentNode.remove()
+}
